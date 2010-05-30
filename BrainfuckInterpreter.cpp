@@ -88,23 +88,23 @@ bool BrainfuckInterpreter::execute()
             }
             else if(code_tape[i] == '<')
             {
-                --ptr;
+                if(--ptr<0) ptr=0;
             }
             else if(code_tape[i] == '+')
             {
-                if(ptr>=0) ++data_tape[ptr];
+                ++data_tape[ptr];
             }
             else if(code_tape[i] == '-')
             {
-                if(ptr>=0) --data_tape[ptr];    
+                --data_tape[ptr];    
             }
             else if(code_tape[i] == '.')
             {
-                if(ptr>=0) std::cout << data_tape[ptr];
+                std::cout << data_tape[ptr];
             }
             else if(code_tape[i] == ',')
             {
-                if(ptr>=0) data_tape[ptr] = getch();
+               data_tape[ptr] = getch();
             }
             else if(code_tape[i] == '[')
             {
