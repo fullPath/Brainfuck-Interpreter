@@ -96,7 +96,7 @@ bool BrainfuckInterpreter::execute()
             }
             else if(code_tape[i] == '-')
             {
-                --data_tape[ptr];    
+                --data_tape[ptr];
             }
             else if(code_tape[i] == '.')
             {
